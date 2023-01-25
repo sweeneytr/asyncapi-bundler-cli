@@ -1,0 +1,27 @@
+{
+  "name": "asyncapi-bundler-cli",
+  "version": "0.1.0",
+  "description": "Run asyncapi bundler from the CLI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "asyncapi_bundler": "dist/index.js"
+  },
+  "prepublish": "tsc",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tristan Sweeney",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/figlet": "^1.5.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "figlet": "^1.5.2"
+  }
+}
