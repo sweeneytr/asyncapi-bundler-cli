@@ -7,12 +7,12 @@ import path from "path";
 
 const program = new Command();
 program
-  .version("0.5.0")
+  .version("0.6.0")
   .description("A CLI for leveraging @asyncapi/bundler")
   .argument('<input>', 'Asyncapi to bundle')
   .action(async (input: string): Promise<void> => {
     try {
-      const file_path = path.resolve(__dirname, input);
+      const file_path = path.resolve(process.cwd(), input);
       process.chdir(path.dirname(file_path));
 
       const document = await bundle([await readFile(path.basename(file_path), 'utf-8')], {
