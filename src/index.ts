@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import bundle from '@asyncapi/bundler';
 import { Command } from "commander";
 import path from "path";
 
 const program = new Command();
 program
-  .version("0.4.0")
+  .version("0.5.0")
   .description("A CLI for leveraging @asyncapi/bundler")
   .argument('<input>', 'Asyncapi to bundle')
   .action(async (input: string): Promise<void> => {
@@ -15,7 +15,7 @@ program
       const file_path = path.resolve(__dirname, input);
       process.chdir(path.dirname(file_path));
 
-      const document = await bundle([readFileSync(path.basename(file_path), 'utf-8')], {
+      const document = await bundle([await readFile(path.basename(file_path), 'utf-8')], {
         referenceIntoComponents: true,
       });
 
