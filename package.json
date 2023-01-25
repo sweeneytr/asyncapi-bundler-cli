@@ -1,11 +1,11 @@
 {
   "name": "asyncapi-bundler-cli",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Run asyncapi bundler from the CLI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "asyncapi_bundler": "dist/index.js"
+    "asyncapi-bundler-cli": "dist/index.js"
   },
   "prepublish": "tsc",
   "scripts": {
@@ -21,6 +21,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@asyncapi/bundler": "^0.3.10",
     "commander": "^10.0.0",
     "figlet": "^1.5.2"
   }

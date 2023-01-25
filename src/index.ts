@@ -10,7 +10,7 @@ console.log(figlet.textSync("AsyncAPI Bundler"));
 
 const program = new Command();
 program
-  .version("0.1.0")
+  .version("0.3.0")
   .description("A CLI for leveraging @asyncapi/bundler")
   .argument('<input>', 'Asyncapi to bundle')
   .argument('<output>', 'Bundled asyncapi file')
