@@ -7,7 +7,7 @@ import path from "path";
 
 const program = new Command();
 program
-  .version("0.6.2")
+  .version("0.7.1")
   .description("A CLI for leveraging @asyncapi/bundler")
   .argument('<input>', 'Asyncapi to bundle')
   .action(async (input: string): Promise<void> => {
@@ -18,8 +18,8 @@ program
       const document = await bundle([await readFile(path.basename(file_path), 'utf-8')], {
         referenceIntoComponents: true,
       });
-
-      console.dir(document.json(), { depth: null });
+      
+      console.log(JSON.stringify(document.json(), null, 2));
     } catch(e) {
       console.error(e);
     }
