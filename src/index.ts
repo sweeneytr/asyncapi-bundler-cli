@@ -7,7 +7,7 @@ import path from "path";
 
 const program = new Command();
 program
-  .version("0.6.0")
+  .version("0.6.1")
   .description("A CLI for leveraging @asyncapi/bundler")
   .argument('<input>', 'Asyncapi to bundle')
   .action(async (input: string): Promise<void> => {
